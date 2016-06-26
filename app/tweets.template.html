@@ -1,0 +1,17 @@
+<div class="media" *ngFor="#tweet of tweets; #i = index" >
+  <div class="media-left">
+    <a href="#">
+      <img class="media-object img-rounded" src="http://lorempixel.com/100/100?t={{ i + 199 }}" alt="Image">
+    </a>
+  </div>
+  <div class="media-body">
+    <h4 class="media-heading">
+        {{ tweet.author }}
+        <span class="text-muted">{{ tweet.handle }}</span>
+    </h4>
+    {{ tweet.body | summary }}
+    <div>
+        <like [likes]="tweet.likes" [totalLikes]="tweet.totalLikes"></like>
+    </div>
+  </div>
+</div>
